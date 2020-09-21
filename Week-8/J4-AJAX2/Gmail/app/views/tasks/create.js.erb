@@ -1,0 +1,2 @@
+document.querySelector('#card-task-<%= @category.id %>').querySelector('#task-list').insertAdjacentHTML("beforeend", "<%= j render 'task', task: @task %>");
+document.querySelector('body').insertAdjacentHTML( "<%= j render 'layouts/flash' %>" );

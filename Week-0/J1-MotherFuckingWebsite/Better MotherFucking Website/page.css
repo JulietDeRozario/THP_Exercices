@@ -1,0 +1,22 @@
+h1
+{
+    font-size: xx-large;
+}
+p
+{
+    font-size: large;
+}
+em
+{
+    font-style: italic;
+}
+body
+{
+    color: #444444;
+    
+        width: 580px; 
+        margin: auto; 
+        margin-top: 40px;
+    
+}
+

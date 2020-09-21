@@ -1,0 +1,54 @@
+
+<div class="jumbotron">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-4">Event Better</h1>
+      <p class="lead">Plateforme des évènements les plus cools</p>
+    </div>
+    <div class="col text-center justify-content-around">
+      <% if user_signed_in? %>
+      <%= link_to "Créer un évènement", new_event_path, class: "btn btn-raised btn-secondary m-auto" %>
+      <% else %>
+      <%= link_to "Créer un évènement", new_user_session_path, class: "btn btn-raised btn-secondary m-auto" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container align-items-center text-center">
+  <h3>Les évènements à venir :</h3>
+  <div class="row">
+    <% @all_events.each do |event| %>
+    <div class="card-deck m-3 text-center">
+      <div class="card" style="width: 19rem;">
+        <% if event.is_validated? == true %>
+          <div class="card-body">
+            <h3 class="card-title"><%= event.title %></h3>
+            <hr>
+            <h6 class="card-subtitle mb-2 text-muted"><%= l event.created_at %></h6>
+            <h4 class="card-subtitle mb-2 text-muted"> Prévu le : <%= l event.start_date %></h4>
+            <p class="card-text"><%= event.description %></p>
+            <% if event.host.first_name != nil %>
+            <% if user_signed_in? %>
+            <%= link_to "#{event.host.first_name}", user_path(event.host.id), class: "btn btn-primary mr-1"  %>
+            <%= link_to ("Voir l'évènement"), event_path(event.id), class: "btn btn-primary ml-1" %>
+            <% else %>
+            <%= link_to "#{event.host.first_name}", new_user_session_path, class: "btn btn-primary mr-1"%>
+            <%= link_to ("Voir l'évènement"), new_user_session_path, class: "btn btn-primary ml-1"%>
+            <% end %>
+            <% else %>
+            <% if user_signed_in? %>
+            <%= link_to "#{event.host.email}", user_path(event.host.id), class: "btn btn-primary mr-1" %>
+            <%= link_to ("Voir l'évènement"), event_path(event.id), class: "btn btn-primary ml-1"%>
+            <% else %>
+            <%= link_to "#{event.host.email}", new_user_session_path, class: "btn btn-primary mr-1"%>
+            <%= link_to ("Voir l'évènement"), new_user_session_path, class: "btn btn-primary ml-1"%>
+            <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

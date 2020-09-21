@@ -1,0 +1,11 @@
+Bienvenue dans le jeu du Morpion
+ 
+   |   |   
+───────────
+   |   |   
+───────────
+   |   |   
+
+, choisissez la case où jouer: (A1/B2/C3...)
+
+> 

@@ -1,0 +1,33 @@
+<% if params[:notice] == "login_failure"%>
+<div class="container mx-auto">
+  <div class="alert alert-danger mx-auto text-center " style= "width: 30rem;" role="alert">
+    <p>La connexion a échouée, vérifie tes informations</p>
+  </div>
+</div>
+<% end %>
+
+<div class="container mt-5 form-group">
+  <h2>Connecte-toi</h2>
+  <hr>
+  <%= form_tag sessions_path, method: "post" do %>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <%= label_tag 'Ton adresse mail' %>
+  <%= email_field_tag 'email', "", class:"form-control" %>
+  <br /> <br />
+
+  <%= label_tag 'Ton mot de passe' %>
+  <%= password_field_tag 'password', "", class:"form-control" %>
+  <br /> <br />
+
+  <div class="form check">
+    <%= check_box_tag :remember_me, :checked => false, class:"form-check-label" %>
+    <%= label_tag :Se_souvenir_de_moi %>
+    <br /> <br />
+  </div>
+
+
+  <%= submit_tag "Se connecter", class:"btn btn-primary"%>
+
+  <% end %>
+</div>

@@ -1,0 +1,80 @@
+.photo
+{
+    float: left ;
+}
+.dessous
+{
+    clear: both;
+    font-size: small;
+}
+body
+{
+    color :#454545;
+    width: 750px; 
+    margin: auto;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top : 70px;
+    line-height:1.4;
+    text-align:justify;
+    
+}    
+    
+    p
+{
+    font-size: medium; 
+}
+h1
+{
+    font-size: 35px; 
+}
+strong
+{
+   color : red; 
+}
+.wrong
+{
+    color : orangered; 
+    text-decoration: underline; 
+
+}
+.petit
+{
+    font-size: xx-small;
+}
+.blue
+{
+    color : blue;
+}
+.violet
+{
+    color: blueviolet;
+}
+.nice
+{
+    color: rgb(16, 92, 255);
+}
+a
+{
+    color: rgb(16, 92, 255);
+}
+a.visited
+{
+    color: rgb(223, 13, 223);
+}
+.lienportant
+{
+    color: red;
+    text-decoration: underline;
+}
+.cat
+{
+    text-decoration: line-through;
+}
+em
+{
+    font-style: italic;
+}
+nav
+{
+    text-align: right;
+}

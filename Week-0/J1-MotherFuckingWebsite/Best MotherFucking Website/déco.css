@@ -1,0 +1,10 @@
+.photo
+{
+    float: left ;
+}
+body
+{
+    color : #454545 ;
+    width: 560px; 
+    margin: auto;
+}

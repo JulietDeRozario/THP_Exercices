@@ -1,0 +1,8 @@
+<h3>Content :</h3>
+<hr>
+<b><%= email.object %></b>
+<br>
+<%= email.body %>
+<hr>
+<%= link_to "Supprimer", email_path(email.id), class:"btn btn-danger", data:{method: "DELETE"}, remote: true %>
+<%= link_to "Marquer non lu", email_path(email.id), id: "btn-read", class:"btn btn-info", data: {method: "PUT"}, remote: true %>

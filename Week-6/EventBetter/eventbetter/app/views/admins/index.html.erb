@@ -1,0 +1,54 @@
+<h2>Dashboard Administrateur</h2>
+<p>bienvenue <%= current_user.first_name %> </p>
+<hr>
+<h3>Inscrits sur ce site</h3>
+<% @all_users.each do |user| %>
+<div class="card-deck m-3 text-center">
+  <div class="card" style="width: 10rem;">
+    <div class="card-body">
+      <h3 class="card-title"><%= link_to user.first_name, user_path(user.id) %></h3>
+      <p class="card-text"><%= user.description %></p>
+      <%= link_to "Supprimer ce compte", edit_admin_path(user.id), data: { confirm: "Are you sure?" }, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
+<% end %>
+<hr>
+
+<h3>Les événements à valider<h3>
+<div class="row">
+    <% @all_events.each do |event| %>
+    <div class="card-deck m-3 text-center">
+      <div class="card" style="width: 19rem;">
+        <% if event.is_validated? == false %>
+          <div class="card-body">
+            <h3 class="card-title"><%= event.title %></h3>
+            <hr>
+            <h6 class="card-subtitle mb-2 text-muted"><%= l event.created_at %></h6>
+            <h4 class="card-subtitle mb-2 text-muted"> Prévu le : <%= l event.start_date %></h4>
+            <p class="card-text"><%= event.description %></p>
+            <% if event.host.first_name != nil %>
+            <% if user_signed_in? %>
+            <%= link_to "#{event.host.first_name}", user_path(event.host.id), class: "btn btn-primary mr-1"  %>
+            <%= link_to ("Voir l'évènement"), event_path(event.id), class: "btn btn-primary ml-1" %>
+            <% else %>
+            <%= link_to "#{event.host.first_name}", new_user_session_path, class: "btn btn-primary mr-1"%>
+            <%= link_to ("Voir l'évènement"), new_user_session_path, class: "btn btn-primary ml-1"%>
+            <% end %>
+            <% else %>
+            <% if user_signed_in? %>
+            <%= link_to "#{event.host.email}", user_path(event.host.id), class: "btn btn-primary mr-1" %>
+            <%= link_to ("Voir l'évènement"), event_path(event.id), class: "btn btn-primary ml-1"%>
+            <% else %>
+            <%= link_to "#{event.host.email}", new_user_session_path, class: "btn btn-primary mr-1"%>
+            <%= link_to ("Voir l'évènement"), new_user_session_path, class: "btn btn-primary ml-1"%>
+            <% end %>
+            <% end %>
+            <%= link_to "Valider", admins_path(:answer => true, :event_id => event.id), class: "btn btn-primary ml-1", method: "post"%>
+            <%= link_to "Refuser", admins_path(:answer => "delete", :event_id => event.id),:data => {:confirm => 'Etes-vous sûr ?'}, class: "btn btn-primary ml-1", method: "post"%>
+          </div>
+        <%end%>
+      </div>
+    </div>
+    <% end %>
+  </div>

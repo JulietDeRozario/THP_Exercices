@@ -1,0 +1,124 @@
+body
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+header a
+{
+  color : rgba(0,0,0,0.87);
+  font-size: 13px;
+  padding: 10px;
+  margin-top: 5px;
+}
+a
+{
+  text-decoration: none;
+}
+a:hover
+{
+  text-decoration: underline;
+}
+footer a, footer
+{
+  color : #5f6368;
+}
+.fr
+{
+  font-size: 15px;
+}
+.button
+{
+  color: whitesmoke;
+  background-color:#4583ed;
+  border-radius: 2px;
+  font-size: 13px;
+  height: 35px;
+  width: 90px;
+}
+.accueil
+{
+  display: flex;
+  justify-content: center;
+  padding-top: 0px;
+}
+.partager
+{
+  position: relative;
+  top: 180px;
+  right: 30px;
+}
+header
+{
+  display: flex;
+  justify-content: right;
+  padding: 15px;
+}
+.formulaire
+{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+.bar
+{
+  width: 550px;
+  border-radius: 20px;
+  height:40px;
+  border: 1px solid #d1d1d1;
+  margin-right: 50px;
+}
+.pied
+{
+  display: flex;
+  justify-content: space-between;
+  margin-top:  20px;
+  padding-top: 10px;
+  border-top: 1px solid #e4e4e4;
+  font-size: 14px;
+}
+footer
+{
+  margin-top: 190px;
+  border-top:1px solid #e4e4e4;
+  background-color:#f2f2f2 ;
+  height: 70px;
+  border:1px rbd(36, 36, 36);
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+.boutons, .boutons input
+{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  color: #5f6368;
+  margin: 5px;
+  font-size: 14px;
+}
+.boutons input:hover, .boutons a:hover
+{
+  color: black;
+  border:0.5px solid #a0a3a5;
+  border-radius: 4px;
+  text-decoration: none; 
+  cursor: pointer;
+  background-color: #f6f5f4;
+}
+button
+{
+  background-color:#ffffff; 
+  border: none;
+}
+.liens
+{
+  margin-top: 20px;
+}
+#gauche
+{
+  text-align: left;
+}
+#droite
+{
+  text-align: right;
+
+}

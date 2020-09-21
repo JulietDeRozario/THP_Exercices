@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Emails</h1>
+<%= link_to 'Recevoir un Email', emails_path, method: :post, remote: true, class: "btn btn-success" %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+    </tr>
+  </thead>
+
+   <tbody id="email_list" class="list-group">
+    <tr id="emails">
+      <% @emails.order(:created_at).each do |email| %>
+      <td id="<%= email.id %>" ><%= render 'email', email: email, class:"list-group-item list-group-item-action" %></td>
+      <td id="email-body"></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

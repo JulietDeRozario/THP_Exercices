@@ -1,0 +1,33 @@
+<div class="container mt-5 form-group">
+  <%= form_tag events_path, method: "post" do %>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <%= label_tag 'Nom de ton événement : ' %>
+  <%= text_field_tag 'title', "", class:"form-control" %>
+  <br /> <br />
+
+  <%= label_tag 'Date de ton événement :' %>
+  <%= date_field_tag 'start_date', "", class:"form-control" %>
+  <br /> <br />
+
+  <%= label_tag 'Description de ton événement (doit contenir au moins 20 caractères) : ' %>
+  <%= text_field_tag 'description', "", class:"form-control" %>
+  <br /> <br />
+
+  <%= label_tag 'Durée de ton événement (en minutes, doit être un multiple de 5) :' %>
+  <%= number_field_tag 'duration', "", class:"form-control" %>
+  <br /> <br />
+
+  <%= label_tag 'Où est-ce que ton événement à lieu ?' %>
+  <%= text_field_tag 'location',"", class:"form-control" %>
+  <br /> <br />
+
+  <%= label_tag 'Prix de ton événement : ' %>
+  <%= number_field_tag 'price', "", class:"form-control" %>
+  <br /> <br />
+
+  <%= submit_tag "Créer", class:"btn btn-primary"%>
+
+</div>
+
+<% end %>

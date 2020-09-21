@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Confirmation de la participation à votre événement</h1>
+  <h4>Salut <%= @host.first_name %> !</h4>
+  <% @participants.each do |participant|%>
+  <h4>
+    <%= participant.first_name %> s'est inscrit à ton événement: <%= @event.title %>
+  </h4>
+  <% end %>
+</body>
+</html>

@@ -1,0 +1,2 @@
+<% color = email.read ? "text-success":"text-danger" %>
+<%= link_to email.object, email_path(email.id), id: email.id, class: color, remote: true %>
